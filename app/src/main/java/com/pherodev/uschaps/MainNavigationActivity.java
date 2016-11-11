@@ -1,5 +1,8 @@
 package com.pherodev.uschaps;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,7 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainNavigationActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, InputEventFragment.OnFragmentInteractionListener {
+
+    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +37,7 @@ public class MainNavigationActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -80,22 +85,59 @@ public class MainNavigationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_map) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            // Create a new fragment and specify the planet to show based on position
+            Fragment fragment = new InputEventFragment();
+            Bundle args = new Bundle();
+            fragment.setArguments(args);
 
-        } else if (id == R.id.nav_slideshow) {
+            // Insert the fragment by replacing any existing fragment
+            FragmentManager fragmentManager = getFragmentManager();
+            fragmentManager.beginTransaction()
+                    .replace(R.id.main_nav_content, fragment)
+                    .commit();
 
-        } else if (id == R.id.nav_manage) {
+            // Highlight the selected item, update the title, and close the drawer
+            setTitle("BlankFragment");
+            // drawer.closeDrawer(drawer); IS GIVING MAJOR ISSUES
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_feed) {
+            //
+        } else if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_settings) {
 
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /** Swaps fragments in the main content view */
+    private void selectItem(int position) {
+        // Create a new fragment and specify the planet to show based on position
+        Fragment fragment = new InputEventFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+
+        // Insert the fragment by replacing any existing fragment
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.main_nav_content, fragment)
+                .commit();
+
+        // Highlight the selected item, update the title, and close the drawer
+        setTitle("BlankFragment");
+        drawer.closeDrawer(drawer);
+    }
+
+    @Override
+    public void setTitle(CharSequence title) {
+        //getSupportActionBar().setTitle(title);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

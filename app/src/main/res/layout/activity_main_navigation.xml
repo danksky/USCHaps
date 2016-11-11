@@ -8,6 +8,10 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <FrameLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/main_nav_content"/>
+
     <include
         layout="@layout/app_bar_main_navigation"
         android:layout_width="match_parent"
