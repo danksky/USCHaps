@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:text="Login"
+        android:id="@+id/login_button"
+        android:layout_marginBottom="224dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/login_password"
+        android:layout_alignStart="@+id/login_password" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/login_password_input"
+        android:layout_marginBottom="33dp"
+        android:layout_above="@+id/login_button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
+
+    <TextView
+        android:text="USC username: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_username"
+        android:layout_marginBottom="19dp"
+        android:textSize="20sp"
+        android:layout_above="@+id/login_password_input"
+        android:layout_alignRight="@+id/login_password"
+        android:layout_alignEnd="@+id/login_password" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/login_username_input"
+        android:cursorVisible="true"
+        android:layout_alignBaseline="@+id/login_username"
+        android:layout_alignBottom="@+id/login_username"
+        android:layout_alignLeft="@+id/login_password_input"
+        android:layout_alignStart="@+id/login_password_input" />
+
+    <TextView
+        android:text="Password: "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_password"
+        android:textSize="20sp"
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_alignBaseline="@+id/login_password_input"
+        android:layout_alignBottom="@+id/login_password_input"
+        android:layout_toLeftOf="@+id/login_password_input"
+        android:layout_toStartOf="@+id/login_password_input" />
+
+</RelativeLayout>
