@@ -4,8 +4,9 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.os.Debug;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 public class MainNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, InputEventFragment.OnFragmentInteractionListener {
@@ -27,6 +31,18 @@ public class MainNavigationActivity extends AppCompatActivity
         setContentView(R.layout.activity_main_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        FloatingActionButton fabCareer = (FloatingActionButton) findViewById(R.id.fab_career);
+        fabCareer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainNavigationActivity.this, "career", Toast.LENGTH_SHORT).show();
+            }
+        });
+        FloatingActionButton fabParty = (FloatingActionButton) findViewById(R.id.fab_party);
+        FloatingActionButton fabFood = (FloatingActionButton) findViewById(R.id.fab_food);
+        FloatingActionButton fabClub = (FloatingActionButton) findViewById(R.id.fab_club);
+        FloatingActionButton fabSport = (FloatingActionButton) findViewById(R.id.fab_sport);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -101,6 +117,24 @@ public class MainNavigationActivity extends AppCompatActivity
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //TODO: Move the following function to the Maps fragment
+    private void selectItem (String select) {
+
+        if (select.equals("FOOD")) {
+
+        } else if (select.equals("PARTY")) {
+
+        } else if (select.equals("CAREER")) {
+
+        } else if (select.equals("CLUB")) {
+
+        } else if (select.equals("SPORT")) {
+
+        } else {
+
+        }
     }
 
     /** Swaps fragments in the main content view */
