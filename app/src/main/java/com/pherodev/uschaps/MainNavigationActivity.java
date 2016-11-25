@@ -108,9 +108,9 @@ public class MainNavigationActivity extends AppCompatActivity
                     .replace(R.id.main_nav_content, fragment)
                     .commit();
 
-            // Highlight the selected item, update the title, and close the drawer
-//            setTitle("BlankFragment");
-//             drawer.closeDrawer(drawer); IS GIVING MAJOR ISSUES
+            // TODO: Highlight the selected item, update the title, and close the drawer
+
+
         } else if (id == R.id.nav_feed) {
             //
         } else if (id == R.id.nav_settings) {
