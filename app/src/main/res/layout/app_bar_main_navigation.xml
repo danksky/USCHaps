@@ -24,6 +24,7 @@
 
     <include layout="@layout/content_main_navigation" />
 
+    <!--TODO: Move this to the maps fragment-->
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/fab_location_selector_menu"
         android:layout_width="wrap_content"
@@ -40,8 +41,8 @@
             android:layout_height="wrap_content"
             fab:fab_size="mini"
             fab:fab_title="Career"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorNormal="@color/app_red_400"
+            fab:fab_colorPressed="@color/app_red_pressed_300"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_food"
@@ -49,8 +50,8 @@
             android:layout_height="wrap_content"
             fab:fab_size="mini"
             fab:fab_title="Food"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorNormal="@color/app_orange_400"
+            fab:fab_colorPressed="@color/app_orange_pressed_300"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_party"
@@ -58,8 +59,8 @@
             android:layout_height="wrap_content"
             fab:fab_size="mini"
             fab:fab_title="Party"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorNormal="@color/app_yellow_400"
+            fab:fab_colorPressed="@color/app_yellow_pressed_300"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_club"
@@ -67,8 +68,8 @@
             android:layout_height="wrap_content"
             fab:fab_size="mini"
             fab:fab_title="Club"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorNormal="@color/app_green_400"
+            fab:fab_colorPressed="@color/app_green_pressed_300"/>
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_sport"
@@ -76,8 +77,8 @@
             android:layout_height="wrap_content"
             fab:fab_size="mini"
             fab:fab_title="Sport"
-            fab:fab_colorNormal="@color/white"
-            fab:fab_colorPressed="@color/white_pressed"/>
+            fab:fab_colorNormal="@color/app_blue_400"
+            fab:fab_colorPressed="@color/app_blue_pressed_300"/>
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 

@@ -91,23 +91,26 @@ public class MainNavigationActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
+        Fragment fragment;
+        Bundle args;
+
 
         if (id == R.id.nav_map) {
             // Handle the camera action
             // Create a new fragment and specify the planet to show based on position
-            Fragment fragment = new InputEventFragment();
-            Bundle args = new Bundle();
+            fragment = new InputEventFragment();
+            args = new Bundle();
             fragment.setArguments(args);
 
             // Insert the fragment by replacing any existing fragment
-            FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction()
                     .replace(R.id.main_nav_content, fragment)
                     .commit();
 
-            // Highlight the selected item, update the title, and close the drawer
-            setTitle("BlankFragment");
-            // drawer.closeDrawer(drawer); IS GIVING MAJOR ISSUES
+            // TODO: Highlight the selected item, update the title, and close the drawer
+
+
         } else if (id == R.id.nav_feed) {
             //
         } else if (id == R.id.nav_settings) {
