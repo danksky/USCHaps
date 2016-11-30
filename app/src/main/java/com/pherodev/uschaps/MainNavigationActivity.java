@@ -16,9 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainNavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, InputEventFragment.OnFragmentInteractionListener {
@@ -30,28 +33,62 @@ public class MainNavigationActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fabCareer = (FloatingActionButton) findViewById(R.id.fab_career);
         fabCareer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainNavigationActivity.this, "career", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainNavigationActivity.this, "Career", Toast.LENGTH_SHORT).show();
             }
         });
+
         FloatingActionButton fabParty = (FloatingActionButton) findViewById(R.id.fab_party);
+        fabParty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainNavigationActivity.this, "Party", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         FloatingActionButton fabFood = (FloatingActionButton) findViewById(R.id.fab_food);
+        fabFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainNavigationActivity.this, "Food", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         FloatingActionButton fabClub = (FloatingActionButton) findViewById(R.id.fab_club);
+        fabClub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainNavigationActivity.this, "Club", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         FloatingActionButton fabSport = (FloatingActionButton) findViewById(R.id.fab_sport);
+        fabSport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainNavigationActivity.this, "Sport", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View header = navigationView.getHeaderView(0);
+        TextView emailTextView = (TextView) header.findViewById(R.id.textView_user_email);
+
+        emailTextView.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
+        toggle.syncState();
     }
 
     @Override
