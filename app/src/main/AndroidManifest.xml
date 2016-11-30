@@ -22,7 +22,6 @@
         </activity>
 
         <!--Other activities-->
-        <activity android:name=".MainActivity"/>
         <activity android:name=".MainNavigationActivity" />
         <activity android:name=".RegistrationActivity" />
     </application>

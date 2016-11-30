@@ -25,13 +25,13 @@ public class LoginActivity extends AppCompatActivity{
     private String appendEmail = "@usc.edu";
     private ProgressDialog progress;
 
-    // test login
+    // test activity_login
     private Button testLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.activity_login);
         instantiateComponents();
         addListeners();
     }
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity{
     }
 
     private void addListeners(){
-        // Set up login button
+        // Set up activity_login button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity{
                 // If failed
                 else {
                     progress.dismiss();
-                    Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Failed to activity_login", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -119,7 +119,7 @@ public class LoginActivity extends AppCompatActivity{
                 // If failed
                 else {
                     progress.dismiss();
-                    Toast.makeText(LoginActivity.this, "Failed to login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Failed to activity_login", Toast.LENGTH_SHORT).show();
                 }
             }
         });
